@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.mycompany.game.controller.MainMenuController"
+            stylesheets="@../style.css">
+    
+    <center>
+        <VBox alignment="CENTER" spacing="30" styleClass="menu-container">
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+            
+            <!-- Game Title -->
+            <Text text="JavaFX 3D Multiplayer Game" styleClass="game-title">
+                <font>
+                    <Font name="Segoe UI Bold" size="48"/>
+                </font>
+            </Text>
+            
+            <!-- Menu Buttons -->
+            <VBox spacing="20" alignment="CENTER" maxWidth="300">
+                <Button text="Start Game" styleClass="menu-button" onAction="#handleStartGame"/>
+                <Button text="Multiplayer" styleClass="menu-button" onAction="#handleMultiplayer"/>
+                <Button text="Settings" styleClass="menu-button" onAction="#handleSettings"/>
+                <Button text="Exit" styleClass="menu-button" onAction="#handleExit"/>
+            </VBox>
+            
+            <!-- Version Info -->
+            <Label text="Version 1.0.0" styleClass="version-label"/>
+        </VBox>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="status-bar">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Status:" styleClass="status-label"/>
+            <Label fx:id="statusLabel" text="Ready" styleClass="status-connected"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="JavaFX 3D Game v1.0.0" styleClass="version-info"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane>
